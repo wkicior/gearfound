@@ -1,0 +1,11 @@
+gearfound-item-mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+gearfound-item-service:
+  image: com.gearfound/gearfound-item-service
+  ports:
+    - "8080:8080"
+  links:
+    - gearfound-item-mongo
+
